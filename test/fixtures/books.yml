@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Sherlock Holmes
+  author: Arthur Conan Doil
+  genre: Detective
+  price: 9.99
+
+two:
+  title: Hitchhiker's guide to the Galaxy
+  author: Douglas Adams
+  genre: Fantastic
+  price: 9.99
