@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       # resourses list
       resources :users, only: %i[show create update destroy]
       resources :tokens, only: [:create]
-      resources :books, only: %i[index show]
+      resources :books, only: %i[index show create update destroy]
     end
   end
 end
