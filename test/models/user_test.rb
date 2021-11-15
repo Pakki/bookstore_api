@@ -13,4 +13,10 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: "test", password_digest: "1q2w3e")
     assert_not user.valid?
   end
+
+  test "user after creation shoul have cart" do
+    user = User.new(email: "special@test.com", password: "1q2w3e", password_confirmation: "1q2w3e")
+    user.save
+    assert user.cart
+  end
 end
