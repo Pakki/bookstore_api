@@ -16,7 +16,7 @@ class Api::V1::BooksControllerTest < ActionDispatch::IntegrationTest
     get api_v1_book_url(@book), as: :json
     assert_response :success
     json_response = JSON.parse(self.response.body)
-    assert_equal @book.title, json_response["title"]
+    assert_equal @book.title, json_response["data"]["attributes"]["title"]
   end
 
   test "should create book" do

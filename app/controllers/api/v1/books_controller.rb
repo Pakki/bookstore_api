@@ -3,17 +3,17 @@ class Api::V1::BooksController < ApplicationController
   before_action :admin?, only: %i[create update destroy]
 
   def index
-    render json: Book.all
+    render json: BookSerializer.new(Book.all).serializable_hash.to_json
   end
 
   def show
-    render json: @book
+    render json: BookSerializer.new(@book).serializable_hash.to_json
   end
 
   def create
     book = Book.new(book_params)
     if book.save
-      render json: book, status: :created
+      render json: BookSerializer.new(book).serializable_hash.to_json, status: :created
     else
       render json: { errors: book.errors }, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class Api::V1::BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      render json: @book
+      render json: BookSerializer.new(@book).serializable_hash.to_json
     else
       render json: @book.errors, status: :unprocessable_entity
     end
