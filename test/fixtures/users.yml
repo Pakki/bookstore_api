@@ -1,9 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-admin:
-  email: admin@test.com
-  password_digest: <%= BCrypt::Password.create('admin@test.com') %>
-  admin: true
+
 
 one:
   email: one@test.com
@@ -12,3 +9,8 @@ one:
 two:
   email: two@test.com
   password_digest: <%= BCrypt::Password.create('two@test.com') %>
+
+admin:
+  email: admin@test.com
+  password_digest: <%= BCrypt::Password.create('admin@test.com') %>
+  admin: true
